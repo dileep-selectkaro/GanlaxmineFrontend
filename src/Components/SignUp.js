@@ -37,7 +37,7 @@ const SignUp = () => {
 
     try {
       console.log("Attempting to sign up with:", { email, password, rememberMe });
-      const response = await axios.post('http://localhost:5000/auth/register', {
+      const response = await axios.post('https://ganlaxmine.onrender.com/auth/register', {
         email,
         password,
         rememberMe,
@@ -67,7 +67,7 @@ const SignUp = () => {
       const result = await signInWithPopup(auth, provider);
       console.log(`Signed up with ${provider.providerId}:`, result.user);
       const token = await result.user.getIdToken();
-      const response = await axios.post('http://localhost:5000/auth/social-register', {
+      const response = await axios.post('https://ganlaxmine.onrender.com/auth/social-register', {
         token,
         provider: provider.providerId,
       });

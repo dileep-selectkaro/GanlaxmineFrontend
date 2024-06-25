@@ -13,7 +13,7 @@ const Login = () => {
     e.preventDefault();
     try {
       console.log("Attempting to login with:", { email, password, rememberMe });
-      const response = await axios.post('http://localhost:5000/auth/login', {
+      const response = await axios.post('https://ganlaxmine.onrender.com/auth/login', {
         email,
         password,
         rememberMe,
@@ -39,7 +39,7 @@ const Login = () => {
       console.log(`Logged in with ${provider.providerId}:`, result.user);
       // Assuming the backend can handle social login token
       const token = await result.user.getIdToken();
-      const response = await axios.post('http://localhost:5000/auth/social-login', {
+      const response = await axios.post('https://ganlaxmine.onrender.com/auth/social-login', {
         token,
         provider: provider.providerId,
       });
